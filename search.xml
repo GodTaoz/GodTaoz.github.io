@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[使用Hexo+GitHub搭建自己的博客]]></title>
+    <url>%2F2019%2F05%2F20%2F%E4%BD%BF%E7%94%A8Hexo-GitHub%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2%2F</url>
+    <content type="text"><![CDATA[使用Hexo+GitHub搭建自己的博客 安装Hexo 准备工作 安装Node.js 安装Git 配置Hexo 搭建GitHub博客 准备工作 创建仓库 配置SSH key 上传到GitHub 常用Hexo命令1.安装Hexo准备工作在安装Hexo之前需要确定电脑已经安装好下列程序： Node.js Git 安装好上述环境之后，使用npm安装Hexo $ npm install -g hexo 具体操作打开上面安装的Git bash窗口，输入上述代码，按下回车 Hexo已经安装完成，下面我们创建自己的博客站点，请执行下列命令，Hexo会自动在Git bash的当前目录创建所需文件 ps：可以在Git bash中通过（cd+路径）的命令进入目标文件夹，也可以直接在目标文件夹中通过右键菜单打开Git bash窗口，然后再执行下列命令 $ hexo init &lt;folder&gt; &lt; folder &gt;表示站点的名字，不加这个选项的话就是在当前文件夹生产所需文件，也就是当前文件夹为博客的站点新建完成后，指定文件夹的目录如下：12345678.├── _config.yml├── package.json├── scaffolds├── source| ├── _drafts| └── _posts└── themes _config.yml网站的 配置 信息，您可以在此配置大部分的参数。 package.json应用程序的信息。 scaffolds模版 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。 themes主题 文件夹。Hexo 会根据主题来生成静态页面。 配置Hexo我们可以在站点目录里的_config.yml配置文件中配置网站的一些基本信息，下面列出一些常见配置： 123456title: taozi #网站标题subtitle: Finsh what we started #网站副标题description: Starting today,a new life begins. #网站描述author: taozi #您的名字language: zh-CN #网站使用的语言theme: next #当前主题名称 ps：上面代码的冒号后面要加一个空格 现在我们可以预览一下当前博客的效果 在博客的站点文件夹中打开Git bash窗口，执行下面代码： 123$ npm install hexo-server --save #安装 hexo-server$ hexo g # 自动生成html文件$ hexo s # 启动服务 这时网站就部署到我们本地的服务器上，可以在浏览器地址栏输入http://localhost:4000/访问 如果您想要更改端口，或是在执行时遇到了 EADDRINUSE 错误，可以在执行时使用 -p 选项指定其他端口，如下 $ hexo s -p 5000 2.搭建GitHub博客准备工作 注册一个GitHub账号 安装好上面环境创建仓库登录你的GitHub，创建一个名为你的用户名.github.io的仓库，比如我的GitHub的用户名是GodTaoz,那我创建的仓库名就是GodTaoz.github.io，将来就是通过http://GodTaoz.github.io访问我的博客###配置SSH key我对SSH key的理解就是通过SSH协议让本地的电脑与你GitHub库取得连接，可以在本地远程管理库中的代码，而且提高了安全性 打开Git bash窗口，输入： ssh-keygen -t rsa -C &quot;邮箱地址&quot; 然后连续按三次回车，最终会在用户目录下生成.ssh文件夹，进入其中，用文本编辑器打开id_rsa.pub文件，复制全部内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key，将刚复制的内容粘贴到key那里，title随便填 测试是否成功输入以下代码： $ ssh -T git@github.com # 注意邮箱地址不用改 根据提示Are you sure you want to continue connecting (yes/no)?输入yes如果出现Hi xxx! You&#39;ve successfully authenticated, but GitHub does not provide shell access.即成功 ####账号和邮箱设置为Git配置GitHub的账号和邮箱：12$ git config --global user.name &quot;GodTaoz&quot;// 你的github用户名，非昵称$ git config --global user.email &quot;xxx@qq.com&quot;// 填写你的github注册邮箱 上传到GitHub 配置SSH key 配置_config.yml SSH key上面已经配置完成，打开站点根目录中的_config.yml配置文件，配置deploy部分，如下：123456deploy: type: git repository: git@github.com:GodTaoz/GodTaoz.github.io.git branch: master``` 配置完成后，在博客的站点文件夹下右键 -&gt; **Git bash here**打开Git bash窗口，输入命令： $ npm install hexo-deployer-git –save #安装插件$ hexo g #生成静态页面至public目录$ hexo d #部署到GitHub1234然后通过http://localhost:4000/就可以访问到## 3.常用Hexo命令常见命令 hexo new “postName” #新建文章hexo new page “pageName” #新建页面hexo generate #生成静态页面至public目录hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）hexo deploy #部署到GitHubhexo help # 查看帮助hexo version #查看Hexo的版本1缩写 hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy1组合命令 hexo s -g #生成并本地预览hexo d -g #生成并上传`参考：https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>GitHub</tag>
+        <tag>Hexo命令</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[first]]></title>
     <url>%2F2019%2F05%2F19%2Ffirst%2F</url>
     <content type="text"><![CDATA[This is my first page.]]></content>
