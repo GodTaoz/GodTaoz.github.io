@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="taozi">
 <meta property="og:description" content="MyBatis随笔什么是MyBatis?MyBatis 是一款优秀的持久层框架，针对JDBC技术进行了封装。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生类型、接口和 Java 的 POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录 为什么要学习MyBati">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-21T12:15:48.161Z">
+<meta property="og:updated_time" content="2019-05-24T07:01:54.976Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MyBatis随笔">
 <meta name="twitter:description" content="MyBatis随笔什么是MyBatis?MyBatis 是一款优秀的持久层框架，针对JDBC技术进行了封装。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生类型、接口和 Java 的 POJO（Plain Old Java Objects，普通老式 Java 对象）为数据库中的记录 为什么要学习MyBati">
@@ -419,12 +419,24 @@
                 
               
 
-              <time title="创建时间：2019-05-21 20:14:22 / 修改时间：20:15:48" itemprop="dateCreated datePublished" datetime="2019-05-21T20:14:22+08:00">2019-05-21</time>
+              <time title="创建时间：2019-05-21 20:14:22" itemprop="dateCreated datePublished" datetime="2019-05-21T20:14:22+08:00">2019-05-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-24 15:01:54" itemprop="dateModified" datetime="2019-05-24T15:01:54+08:00">2019-05-24</time>
               
             
           </span>
@@ -560,7 +572,7 @@
 <p>标签中填写的是所对应的sql语句，id的值为dao方法名，如果有返回值加入resultType属性</p>
 <h3 id="注册Mapper"><a href="#注册Mapper" class="headerlink" title="注册Mapper"></a>注册Mapper</h3><p>打开<code>mybatis-config.xml</code>配置文件，在 <code>&lt;configuration&gt;</code>标签内，<code>&lt;environments&gt;</code>标签外加入以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;mappers&gt;</span><br><span class="line">		&lt;mapper resource=&quot;mapper.xml&quot; /&gt;</span><br><span class="line">&lt;/mappers&gt;</span><br></pre></td></tr></table></figure></p>
 <p>我的理解是使框架可以找到Mapper映射文件，使上面的配置生效</p>
-<h3 id="获取Mapper映射文件所提供的实现类对象"><a href="#获取Mapper映射文件所提供的实现类对象" class="headerlink" title="获取Mapper映射文件所提供的实现类对象"></a>获取Mapper映射文件所提供的实现类对象</h3><p>Talk is cheap,show me the code.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">         <span class="comment">//mapper映射文件+sqlsession工具类 = 获取StudentDAO接口的实现类 </span></span><br><span class="line"><span class="comment">//获取sqlsessionfactorybuilder 工厂创建者</span></span><br><span class="line">SqlSessionFactoryBuilder builder = <span class="keyword">new</span> SqlSessionFactoryBuilder();</span><br><span class="line"><span class="comment">//加载数据库运行环境的配置文件  需要提供mybatis-config.xml配置文件的路径作为参数</span></span><br><span class="line">Reader rs = Resources.getResourceAsReader(<span class="string">"mybatis-config.xml"</span>);</span><br><span class="line"><span class="comment">//获取factory对象，并将mybatis-config.xml配置相关信息封装到factory对象中</span></span><br><span class="line">SqlSessionFactory factory = builder.build(rs);</span><br><span class="line"><span class="comment">//通过factory对象生产所需要的sqlsession 工具类</span></span><br><span class="line">SqlSession sqlsession = factory.openSession();</span><br><span class="line"><span class="comment">//将所需要的接口实现类的接口类对象作为参数</span></span><br><span class="line">StudentDAO dao = sqlsession.getMapper(StudentDAO.class);<span class="comment">//StudentDAOimpl</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="获取Mapper映射文件所提供的实现类对象"><a href="#获取Mapper映射文件所提供的实现类对象" class="headerlink" title="获取Mapper映射文件所提供的实现类对象"></a>获取Mapper映射文件所提供的实现类对象</h3><p>Talk is cheap,show me the code.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//mapper映射文件+sqlsession工具类 = 获取StudentDAO接口的实现类 </span></span><br><span class="line"><span class="comment">//获取sqlsessionfactorybuilder 工厂创建者</span></span><br><span class="line">SqlSessionFactoryBuilder builder = <span class="keyword">new</span> SqlSessionFactoryBuilder();</span><br><span class="line"><span class="comment">//加载数据库运行环境的配置文件  需要提供mybatis-config.xml配置文件的路径作为参数</span></span><br><span class="line">Reader rs = Resources.getResourceAsReader(<span class="string">"mybatis-config.xml"</span>);</span><br><span class="line"><span class="comment">//获取factory对象，并将mybatis-config.xml配置相关信息封装到factory对象中</span></span><br><span class="line">SqlSessionFactory factory = builder.build(rs);</span><br><span class="line"><span class="comment">//通过factory对象生产所需要的sqlsession 工具类</span></span><br><span class="line">SqlSession sqlsession = factory.openSession();</span><br><span class="line"><span class="comment">//将所需要的接口实现类的接口类对象作为参数</span></span><br><span class="line">StudentDAO dao = sqlsession.getMapper(StudentDAO.class);<span class="comment">//StudentDAOimpl</span></span><br></pre></td></tr></table></figure></p>
 
       
     </div>
