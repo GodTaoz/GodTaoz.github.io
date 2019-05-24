@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-05-21T02:56:09.568Z</updated>
+  <updated>2019-05-21T12:15:48.161Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>MyBatis随笔</title>
+    <link href="http://yoursite.com/2019/05/21/MyBatis%E9%9A%8F%E7%AC%94/"/>
+    <id>http://yoursite.com/2019/05/21/MyBatis随笔/</id>
+    <published>2019-05-21T12:14:22.000Z</published>
+    <updated>2019-05-21T12:15:48.161Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;MyBatis随笔&quot;&gt;&lt;a href=&quot;#MyBatis随笔&quot; class=&quot;headerlink&quot; title=&quot;MyBatis随笔&quot;&gt;&lt;/a&gt;MyBatis随笔&lt;/h1&gt;&lt;h2 id=&quot;什么是MyBatis&quot;&gt;&lt;a href=&quot;#什么是MyBatis&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="java" scheme="http://yoursite.com/categories/java/"/>
+    
+    
+      <category term="MyBatis" scheme="http://yoursite.com/tags/MyBatis/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用Hexo+GitHub搭建自己的博客</title>
     <link href="http://yoursite.com/2019/05/21/%E4%BD%BF%E7%94%A8Hexo-GitHub%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
     <id>http://yoursite.com/2019/05/21/使用Hexo-GitHub搭建自己的博客/</id>
     <published>2019-05-21T02:52:51.000Z</published>
-    <updated>2019-05-21T02:56:09.568Z</updated>
+    <updated>2019-05-21T12:18:23.511Z</updated>
     
     <summary type="html">
     
@@ -38,7 +64,9 @@
       <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
     
     
-      <category term="Hexo GitHub" scheme="http://yoursite.com/tags/Hexo-GitHub/"/>
+      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+      <category term="GitHub" scheme="http://yoursite.com/tags/GitHub/"/>
     
   </entry>
   
